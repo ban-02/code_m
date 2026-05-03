@@ -1,3 +1,17 @@
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('#nav-menu');
+
+menu.addEventListener('click', function() {
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+});
+
+// Opcional: Cerrar el menú al hacer clic en un enlace
+document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
+    menu.classList.remove('is-active');
+    menuLinks.classList.remove('active');
+}));
+
 particlesJS("particles-js", {
             "particles": {
                 "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
@@ -27,3 +41,5 @@ particlesJS("particles-js", {
             },
             "retina_detect": true
         });
+
+

@@ -12,13 +12,21 @@
 
     <header>
         <nav class="navbar">
+            <!-- Botón Hamburguesa -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
             <div class="logo">
                 <a href="#">
                     <img src="img/LOGO3.svg" alt="Logo">
                 </a>
             </div>
 
-            <ul class="nav-links">
+            <!-- Se añade la clase 'nav-menu' para controlarla con JS -->
+            <ul class="nav-links" id="nav-menu">
                 <li><a href="index.html" class="link-actu">&lt; Inicio &gt;</a></li>
                 <li><a href="pages/services.html">Servicios</a></li>
                 <li><a href="pages/projects.html">Proyectos</a></li>

@@ -46,11 +46,93 @@ header {
 
 
 /* NAVBAR */
+/* --- ESTILO PARA PC (Asegúrate de que tu .navbar se vea así) --- */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Logo a la izq, Links a la der */
     align-items: center;
     min-height: 80px;
+}
+
+/* Ocultar el botón hamburguesa en PC */
+.menu-toggle {
+    display: none;
+}
+
+/* --- ADAPTACIÓN MÓVIL (Solo dentro del Media Query) --- */
+@media (max-width: 768px) {
+    .navbar {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr; /* Crea 3 columnas para centrar perfecto */
+        justify-items: center;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    .menu-toggle {
+        display: block; /* Aparece solo en celular */
+        grid-column: 1; /* Se queda en la primera columna (izquierda) */
+        justify-self: start;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .logo {
+        grid-column: 2; /* El logo se queda en la columna central */
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    /* El espacio de la derecha (columna 3) queda vacío para que el logo esté centrado */
+
+    /* Menú Desplegable Lateral */
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(15px);
+        width: 75%;
+        height: 100vh;
+        transition: 0.4s ease;
+        padding-top: 100px;
+        z-index: 1000;
+        border-right: 2px solid hsl(90, 100%, 54%);
+        gap: 1.5rem;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    /* Animación de la hamburguesa */
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: hsl(90, 100%, 54%);
+        transition: 0.3s;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) { opacity: 0; }
+    #mobile-menu.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #mobile-menu.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Ajuste Home */
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 20px;
+    }
+    
+    .terminal-body {
+        /* Asegura que el contenedor de código no herede el centrado */
+        text-align: left; 
+    }
 }
 
 /* LOGO */
@@ -265,3 +347,4 @@ header {
     transform: rotateY(0deg) rotateX(0deg); /* Se endereza al pasar el mouse */
     box-shadow: 0 0 30px hsla(90, 100%, 54%, 0.3);
 }
+
