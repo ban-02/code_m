@@ -1,0 +1,267 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #000000;
+    color: #e6edf3;
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Se queda atrás */
+    background-color: #000000;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+
+
+
+/* HEADER */
+header {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    padding: 0 5%;
+    /* Mantenemos tu sombra original y agregamos el resplandor de color */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5), 
+                0 4px 15px -2px hsl(90, 100%, 54%); 
+    
+    /* El borde sólido que define la línea */
+    border-bottom: 2px solid hsl(90, 100%, 54%);
+    
+}
+
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+}
+
+/* LOGO */
+.logo img {
+    height: 80px;
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ccc;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: hsl(90, 100%, 54%);
+}
+.link-actu {
+    color: hsl(90, 100%, 54%) !important;
+    text-shadow: 0 0 10px hsl(90, 100%, 54%);
+}
+
+/* HOME */
+.home {
+    display: flex;
+    align-items: center;    /* Centra el contenido verticalmente */
+    justify-content: space-between; /* Separa el texto de la imagen */
+    padding: 80px 5%;       /* Espaciado interno */
+    min-height: 80vh;       /* Altura para que destaque en pantalla */
+
+    color: #fff;
+}
+
+.home-content {
+    flex: 1;                /* Toma el espacio disponible */
+    max-width: 600px;       /* Evita que el texto se estire demasiado */
+}
+
+.home-content h1 {
+    font-size: 4rem;        /* Tamaño grande para el H1 */
+    margin-bottom: 20px;
+    line-height: 1.1;
+    filter: drop-shadow(0 0 15px hsl(90, 100%, 54%))
+}
+
+.home-content h2 {
+    font-size: 2rem;        /* Tamaño grande para el H1 */
+    margin-bottom: 20px;
+    line-height: 1.1;
+    color: hsl(90, 100%, 54%);
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.home-img {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Alinea la imagen a la derecha */
+}
+
+.home-img img {
+    max-width: 60%;        /* Para que sea responsive */
+    height: auto;
+    border-radius: 15px;    /* Opcional: bordes redondeados */
+    /* Opcional: añadir un resplandor igual al del header */
+    filter: drop-shadow(0 0 15px hsl(90, 100%, 54%)); 
+}
+/* BOTÓN */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: hsl(90, 100%, 54%);
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: hsl(90, 100%, 54%);
+}
+
+
+
+/* Responsivo: En celulares se pone uno debajo del otro */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .home-img {
+        margin-top: 50px;
+        justify-content: center;
+    }
+}
+
+
+/* CONTENEDOR DE LA TERMINAL */
+.terminal-window {
+    width: 100%;
+    max-width: 550px;
+    height: 100%;
+    /*background: #050505; /* Un negro más profundo */
+    background: #000;
+    border: 1px solid rgba(172, 255, 47, 0.2); /* Borde sutil del color neón */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 
+                0 0 20px hsla(90, 100%, 54%, 0.2); /* Resplandor suave */
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* BARRA SUPERIOR */
+.terminal-header {
+    background: #1a1a1a;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #333;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.terminal-title {
+    color: #666;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+/* CUERPO DE LA TERMINAL */
+.terminal-body {
+    padding: 20px;
+    color: #e6edf3;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* COLORES DEL CÓDIGO (Sintaxis Neón Vibrante) */
+
+/* Rosa Eléctrico / Magenta Neón */
+.code-keyword { 
+    color: #ff00ff; 
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.6); 
+} 
+
+/* Azul Cobalto Brillante (para que el comentario no se pierda) */
+.code-comment { 
+    color: #00d9ff; 
+    font-style: italic; 
+    opacity: 0.9;
+} 
+
+/* Verde Lima Fosforescente (Puro 100% saturación) */
+.code-string { 
+    color: hsl(90, 100%, 54%); 
+    text-shadow: 0 0 10px hsla(90, 100%, 54%, 0.5);
+} 
+
+/* Cyan / Aqua Radioactivo */
+.code-output { 
+    color: #00ffff; 
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+}
+
+/* CURSOR ANIMADO */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2rem;
+    background: hsl(90, 100%, 54%);
+    animation: blink 1s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Ajuste para que la terminal no se vea pequeña */
+.home-img {
+    justify-content: center;
+    perspective: 1000px; /* Para efecto 3D opcional */
+}
+
+.terminal-window {
+    transform: rotateY(-10deg) rotateX(5deg); /* Efecto de inclinación pro */
+    transition: 0.5s;
+}
+
+.terminal-window:hover {
+    transform: rotateY(0deg) rotateX(0deg); /* Se endereza al pasar el mouse */
+    box-shadow: 0 0 30px hsla(90, 100%, 54%, 0.3);
+}
